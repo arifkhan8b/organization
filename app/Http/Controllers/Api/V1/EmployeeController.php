@@ -103,6 +103,8 @@ class EmployeeController extends BaseController
    
         $validator = Validator::make($input, [
             'email' => 'required|unique:employees',
+            'first_name' => 'required',
+            'last_name' => 'required'
         ]);
    
         if($validator->fails()){
@@ -238,6 +240,8 @@ class EmployeeController extends BaseController
    
         $validator = Validator::make($input, [
             'email' => 'required|unique:employees,email,'.$employee->id,
+            'first_name' => 'required',
+            'last_name' => 'required'
         ]);
    
         if($validator->fails()){
